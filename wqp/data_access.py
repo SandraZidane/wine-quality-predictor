@@ -33,7 +33,7 @@ def build_train_test_sets(data, label_col, train_size):
     try:
         X = data.drop(label_col, axis=1)
         y = data[label_col]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=train_size)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=train_size, random_state = 0)
 
         return dict(train=(X_train, y_train), test=(X_test, y_test))
 
